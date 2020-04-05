@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Notes on Hugo Blog - Rongping Zhu&#39;s Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+
+	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<link href="https://cdn.bootcss.com/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Rongping Zhu&#39;s Blog" rel="home">
+				<div class="logo__title">Rongping Zhu&#39;s Blog</div>
+				<div class="logo__tagline">Do not have a motto.</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/publications/">
+				
+				<span class="menu__text">Publications</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/archives/">
+				
+				<span class="menu__text">Archives</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">
+				
+				<span class="menu__text">About Me</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Notes on Hugo Blog</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-04-05T15:31:46&#43;08:00">April 05, 2020</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/web/" rel="category">Web</a>
+	</span>
+</div>
+<div class="meta__item-words meta__item">
+	<span class="meta__text">232 Words</span>
+</div>
+<div class="meta__item-time meta__item">
+    <span class="meta__text">2 Minutes Read</span>
+</div></div>
+		</header>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#quick-start">Quick Start</a>
+      <ul>
+        <li><a href="#notes-for-submodule">Notes for submodule</a></li>
+        <li><a href="#notes-for-taxonomies">Notes for taxonomies</a></li>
+      </ul>
+    </li>
+    <li><a href="#todo-list">Todo List</a></li>
+  </ul>
+</nav>
+	</div>
+</div>
+<div class="content post__content clearfix">
+			<h2 id="quick-start">Quick Start</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new site &lt;site-name&gt; <span style="color:#75715e"># new site</span>
+git init; git submodule add &lt;url&gt; themes/theme-name <span style="color:#75715e"># add a theme from remote</span>
+hugo new &lt;CAT&gt;/&lt;FILE&gt;.&lt;FORMAT&gt; <span style="color:#75715e"># new article, mainly .md</span>
+hugo server -D <span style="color:#75715e"># local server</span>
+hugo -D <span style="color:#75715e"># build in ./public/, &#39;D&#39; for deploy</span>
+</code></pre></div><blockquote>
+<p>Drafts do not get deployed; once you finish a post, update the header of the post to say <code>draft: false</code>.</p>
+</blockquote>
+<h3 id="notes-for-submodule">Notes for submodule</h3>
+<p>My blog uses the theme <em>Mainroad</em>, and I added some additional features, for example, tap-to-top, word count, archive, etc. If the new features can be added outside the theme, then, we can keep the theme repository clean. If it has to be put in the theme file, like the tap-to-top module, we shall open a new branch in the submodule directory, in order to easily upgrade theme later.</p>
+<h3 id="notes-for-taxonomies">Notes for taxonomies</h3>
+<p>My <code>content</code> folder has 3 subfolders and 1 file:</p>
+<ul>
+<li><code>posts/</code> for blog pages</li>
+<li><code>publications/</code> for research papers publishing</li>
+<li><code>archives/</code> for Archives page</li>
+<li><code>about.md</code> for About Me page</li>
+</ul>
+<p>Every article shall have <code>categories</code> and <code>tags</code> for taxonomies. As for <code>categories</code>, we should list almost all categories we will use before hand. For me, I will use</p>
+<ul>
+<li>Programing</li>
+<li>Math</li>
+<li>Distributed Optimization</li>
+<li>etc.</li>
+</ul>
+<p>Moreover, I usually name a file with date first, like <code>yymmdd-filename.md</code>.</p>
+<h2 id="todo-list">Todo List</h2>
+<ul>
+<li>Archive ordering by time?</li>
+<li>The About page</li>
+<li>Floating TOC like the theme <em>Even</em></li>
+<li>In-site searching</li>
+<li>Comments</li>
+<li>Google Analytics</li>
+<li>Et cetera.</li>
+</ul>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/hugo/" rel="tag">Hugo</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/blog/" rel="tag">Blog</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Rongping Zhu avatar" src="/img/avatar.jpg" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Rongping Zhu</span>
+	</div>
+	<div class="authorbox__description">
+		A man always learning.
+	</div>
+</div>
+
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 Rongping Zhu.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+	<div id="return-to-top">
+		<i class="fas fa-chevron-up"></i>
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script src="/js/custom.js"></script></body>
+</html>

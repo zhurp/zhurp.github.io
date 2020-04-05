@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rongping Zhu&#39;s Blog</title>
+    <link>http://zhurp.github.io/</link>
+    <description>Recent content on Rongping Zhu&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Apr 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://zhurp.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Notes on Hugo Blog</title>
+      <link>http://zhurp.github.io/posts/200405-hugo-notes/</link>
+      <pubDate>Sun, 05 Apr 2020 15:31:46 +0800</pubDate>
+      
+      <guid>http://zhurp.github.io/posts/200405-hugo-notes/</guid>
+      <description>Quick Start hugo new site &amp;lt;site-name&amp;gt; # new site git init; git submodule add &amp;lt;url&amp;gt; themes/theme-name # add a theme from remote hugo new &amp;lt;CAT&amp;gt;/&amp;lt;FILE&amp;gt;.&amp;lt;FORMAT&amp;gt; # new article, mainly .md hugo server -D # local server hugo -D # build in ./public/, &amp;#39;D&amp;#39; for deploy  Drafts do not get deployed; once you finish a post, update the header of the post to say draft: false.
+ Notes for submodule My blog uses the theme Mainroad, and I added some additional features, for example, tap-to-top, word count, archive, etc.</description>
+    </item>
+    
+    <item>
+      <title>About Me</title>
+      <link>http://zhurp.github.io/about/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://zhurp.github.io/about/</guid>
+      <description>Do not have an About now.</description>
+    </item>
+    
+  </channel>
+</rss>
